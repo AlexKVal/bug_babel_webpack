@@ -1,6 +1,6 @@
 # trash project
 
-With this versions
+With this versions (`babel-loader@4.3.0`)
 ```json
 "dependencies": {
   "babel-core": "5.1.10",
@@ -8,17 +8,21 @@ With this versions
   "webpack": "1.8.5"
 }
 ```
-this code `client.js`
+```sh
+$ git clone git@github.com:AlexKVal/bug_babel_webpack.git
+$ npm istall
+```
+
+this code [client.js](https://github.com/AlexKVal/bug_babel_webpack/blob/master/client.js)
 ```js
 import plugin from './client_plugin';
 console.log("hello " + plugin.p)
 ```
 compiles OK
 ```sh
-$ npm i
 $ webpack
 ```
-into this code `bundle.js`
+into this code [bundle.js](https://github.com/AlexKVal/bug_babel_webpack/blob/master/bundle.js)
 ```js
 var plugin = _interopRequire(__webpack_require__(1));
 console.log("hello " + plugin.p);
@@ -29,7 +33,7 @@ But with the `babel-loader@5.0.0`
 $ npm i babel-loader@5.0.0
 $ webpack
 ```
-it compiles into this `bundle.js`
+it compiles into this [bundle.js](https://github.com/AlexKVal/bug_babel_webpack/blob/wrong/bundle.js)
 ```js
 var _plugin = __webpack_require__(1);
 var _plugin2 = _interopRequireWildcard(_plugin);
@@ -42,7 +46,7 @@ eval('console.log("hello " + plugin.p)');
 ```
 I've got a `ReferenceError` `cannot find "plugin"`
 
-Webpack config:
+[Webpack config](https://github.com/AlexKVal/bug_babel_webpack/blob/master/webpack.config.js):
 ```js
 module.exports = {
   entry: "./client.js",
