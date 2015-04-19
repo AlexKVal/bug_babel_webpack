@@ -46,13 +46,15 @@
 
 	"use strict";
 
-	var _interopRequire = function (obj) { return obj && obj.__esModule ? obj["default"] : obj; };
+	var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? obj : { "default": obj }; };
 
 	// var plugin = require('./client_plugin');
 
-	var plugin = _interopRequire(__webpack_require__(1));
+	var _plugin = __webpack_require__(1);
 
-	console.log("hello " + plugin.p);
+	var _plugin2 = _interopRequireWildcard(_plugin);
+
+	console.log("hello " + _plugin2["default"].p);
 
 	// eval('console.log("hello " + plugin.p)');
 
