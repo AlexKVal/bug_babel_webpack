@@ -1,4 +1,6 @@
-var plugin = require('./client_plugin');
+// var plugin = require('./client_plugin');
+import plugin from './client_plugin';
 
-console.log('hello');
-console.log(plugin.p);
+console.log("hello " + plugin.p)
+
+// eval('console.log("hello " + plugin.p)');

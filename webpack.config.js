@@ -1,8 +1,3 @@
-require('babel-core/register')({
-  ignore: /node_modules/,
-  optional: ['es7.objectRestSpread']
-});
-
 module.exports = {
   entry: "./client.js",
   output: {
@@ -11,7 +6,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      // { test: /\.css$/, loader: "style!css" }
+      { test: /\.js/, loader: 'babel', exclude: /node_modules/ }
     ]
   }
 };
